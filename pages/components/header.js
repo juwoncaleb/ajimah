@@ -10,23 +10,19 @@ export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [search, setSearch] = useState("");
 
-  // NAVIGATION LINKS
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Project", href: "/project" },
     { name: "About", href: "/about" },
-
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ];
 
-  // CLOSE MENUS WHEN PAGE CHANGES
   useEffect(() => {
     setMenuOpen(false);
     setSearchOpen(false);
   }, [router.asPath]);
 
-  // PREVENT SCROLLING WHEN MOBILE MENU IS OPEN
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
 
@@ -35,7 +31,6 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  // SEARCH
   const handleSearch = (e) => {
     e.preventDefault();
 
@@ -49,19 +44,13 @@ export default function Header() {
 
   return (
     <>
-      {/* =====================================
-          AJMAH HEADER
-      ===================================== */}
-
       <header className="ajmah-header">
         <div className="header-inner">
 
-          {/* LOGO */}
           <Link href="/" className="header-logo">
             AJMAH
           </Link>
 
-          {/* DESKTOP NAVIGATION */}
           <nav className="desktop-nav" aria-label="Main navigation">
             {navLinks.map((item) => (
               <Link
@@ -76,10 +65,7 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* RIGHT SECTION */}
           <div className="header-actions">
-
-            {/* SEARCH BUTTON */}
             <button
               type="button"
               className="search-icon"
@@ -101,16 +87,13 @@ export default function Header() {
               </svg>
             </button>
 
-            {/* VERTICAL DIVIDER */}
             <span className="header-divider" />
 
-            {/* CONTACT */}
             <Link href="/contact" className="header-contact">
               <span>AJMAH STUDIO</span>
               <small>WORK WITH US</small>
             </Link>
 
-            {/* MOBILE MENU BUTTON */}
             <button
               type="button"
               className={`menu-toggle ${menuOpen ? "active" : ""}`}
@@ -125,7 +108,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* SEARCH BAR */}
         {searchOpen && (
           <form className="header-search" onSubmit={handleSearch}>
             <input
@@ -139,10 +121,6 @@ export default function Header() {
           </form>
         )}
       </header>
-
-      {/* =====================================
-          MOBILE NAVIGATION
-      ===================================== */}
 
       <div className={`mobile-nav ${menuOpen ? "open" : ""}`}>
         <nav aria-label="Mobile navigation">
@@ -163,28 +141,25 @@ export default function Header() {
         </div>
       </div>
 
-      {/* =====================================
-          HEADER STYLING
-      ===================================== */}
-
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
 
-        /* =====================================
-           HEADER
-        ===================================== */
+        body {
+          padding-top: 105px;
+        }
 
         .ajmah-header {
-          position: relative;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
           z-index: 1001;
           width: 100%;
           background: #414742;
           color: #ffffff;
           font-family: 'Cormorant Garamond', Georgia, serif;
-
-          /* WHITE BORDER AT THE BOTTOM ONLY */
           border: none;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+          border-bottom: 1px solid rgba(255,255,255,0.65);
         }
 
         .ajmah-header *,
@@ -198,10 +173,6 @@ export default function Header() {
           text-decoration: none;
         }
 
-        /* =====================================
-           HEADER INNER
-        ===================================== */
-
         .ajmah-header .header-inner {
           width: 100%;
           min-height: 105px;
@@ -211,14 +182,8 @@ export default function Header() {
           align-items: center;
           justify-content: space-between;
           gap: 35px;
-
-          /* NO EXTRA BORDER */
           border: none;
         }
-
-        /* =====================================
-           LOGO
-        ===================================== */
 
         .ajmah-header .header-logo {
           font-family: 'Cormorant Garamond', Georgia, serif;
@@ -227,10 +192,6 @@ export default function Header() {
           letter-spacing: 5px;
           white-space: nowrap;
         }
-
-        /* =====================================
-           DESKTOP NAVIGATION
-        ===================================== */
 
         .ajmah-header .desktop-nav {
           display: flex;
@@ -258,10 +219,6 @@ export default function Header() {
           text-underline-offset: 7px;
         }
 
-        /* =====================================
-           HEADER ACTIONS
-        ===================================== */
-
         .ajmah-header .header-actions {
           display: flex;
           flex-direction: row;
@@ -285,15 +242,11 @@ export default function Header() {
           opacity: 0.65;
         }
 
-        /* VERTICAL DIVIDER */
-
         .ajmah-header .header-divider {
           width: 1px;
           height: 38px;
-          background: rgba(255, 255, 255, 0.45);
+          background: rgba(255,255,255,0.45);
         }
-
-        /* CONTACT */
 
         .ajmah-header .header-contact {
           min-width: 150px;
@@ -317,10 +270,6 @@ export default function Header() {
           font-size: 9px;
           letter-spacing: 1px;
         }
-
-        /* =====================================
-           MOBILE MENU BUTTON
-        ===================================== */
 
         .ajmah-header .menu-toggle {
           display: none;
@@ -355,10 +304,6 @@ export default function Header() {
           transform: translateY(-7px) rotate(-45deg);
         }
 
-        /* =====================================
-           SEARCH BAR
-        ===================================== */
-
         .ajmah-header .header-search {
           position: absolute;
           top: 100%;
@@ -369,7 +314,7 @@ export default function Header() {
           gap: 20px;
           background: #414742;
           border: none;
-          box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 12px 25px rgba(0,0,0,0.12);
         }
 
         .ajmah-header .header-search input {
@@ -386,7 +331,7 @@ export default function Header() {
         }
 
         .ajmah-header .header-search input::placeholder {
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(255,255,255,0.6);
         }
 
         .ajmah-header .header-search button {
@@ -405,10 +350,6 @@ export default function Header() {
           color: #414742;
         }
 
-        /* =====================================
-           MOBILE NAVIGATION
-        ===================================== */
-
         .mobile-nav {
           display: none;
           font-family: 'Cormorant Garamond', Georgia, serif;
@@ -419,11 +360,11 @@ export default function Header() {
           text-decoration: none;
         }
 
-        /* =====================================
-           TABLET
-        ===================================== */
-
         @media (max-width: 1100px) {
+          body {
+            padding-top: 85px;
+          }
+
           .ajmah-header .header-inner {
             min-height: 85px;
             padding: 0 5%;
@@ -456,7 +397,6 @@ export default function Header() {
             visibility: hidden;
             opacity: 0;
             transform: translateY(-15px);
-
             transition:
               opacity 0.35s ease,
               transform 0.35s ease,
@@ -486,7 +426,7 @@ export default function Header() {
           }
 
           .mobile-nav-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-top: 1px solid rgba(255,255,255,0.3);
             padding-top: 25px;
           }
 
@@ -501,11 +441,11 @@ export default function Header() {
           }
         }
 
-        /* =====================================
-           MOBILE
-        ===================================== */
-
         @media (max-width: 700px) {
+          body {
+            padding-top: 75px;
+          }
+
           .ajmah-header .header-inner {
             min-height: 75px;
             padding: 0 20px;
