@@ -1,0 +1,45 @@
+{
+  "name": "chase",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
+    "@contentful/rich-text-react-renderer": "^16.2.2",
+    "@contentful/rich-text-types": "^17.2.7",
+    "@syncfusion/ej2": "^19.4.48",
+    "@syncfusion/ej2-react-calendars": "^19.4.48",
+    "@syncfusion/ej2-react-charts": "^19.4.50",
+    "@syncfusion/ej2-react-dropdowns": "^19.4.52",
+    "@syncfusion/ej2-react-grids": "^19.4.50",
+    "@syncfusion/ej2-react-inputs": "^19.4.52",
+    "@syncfusion/ej2-react-kanban": "^19.4.48",
+    "@syncfusion/ej2-react-popups": "^19.4.52",
+    "@syncfusion/ej2-react-richtexteditor": "^19.4.50",
+    "@syncfusion/ej2-react-schedule": "^19.4.50",
+    "@tailwindcss/typography": "^0.5.20",
+    "@typeform/embed-react": "^3.8.0",
+    "alpinejs": "^3.13.3",
+    "contentful": "^11.12.5",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.12",
+    "framer-motion": "^10.16.5",
+    "lucide-react": "^1.23.0",
+    "next": "13.4.12",
+    "nodemailer": "^9.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "prettier": "3.8.5",
+    "tailwindcss": "^3.4.14"
+  }
+}

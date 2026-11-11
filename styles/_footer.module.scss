@@ -1,0 +1,332 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap");
+
+.ajmah-footer-new {
+  width: 100%;
+  background: #F2EDE7;
+  color: #000000;
+  padding: 72px 7% 30px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+}
+
+.ajmah-footer-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.ajmah-footer-heading {
+  padding-bottom: 45px;
+}
+
+.ajmah-footer-logo {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 5px;
+  line-height: 1.2;
+}
+
+.ajmah-footer-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* MAIN LAYOUT */
+
+.ajmah-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.75fr;
+  gap: 80px;
+  padding: 62px 0 90px;
+}
+
+/* NAVIGATION */
+
+.ajmah-footer-navigation {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 35px;
+}
+
+.ajmah-footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h3 {
+    margin: 0 0 36px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  a {
+    display: block;
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    line-height: 1.5;
+    transition: opacity 0.25s ease;
+
+    &:hover {
+      opacity: 0.55;
+    }
+  }
+}
+
+/* NEWSLETTER */
+
+.ajmah-footer-right {
+  width: 100%;
+  max-width: 450px;
+  justify-self: end;
+}
+
+.ajmah-footer-newsletter {
+  h3 {
+    margin: 0 0 45px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 27px;
+    font-weight: 400;
+  }
+
+  form {
+    display: flex;
+    width: 100%;
+    height: 39px;
+  }
+
+  input {
+    width: 100%;
+    min-width: 0;
+    flex: 1;
+    padding: 0 13px;
+    border: 1px solid #000;
+    border-right: 0;
+    border-radius: 0;
+    outline: none;
+    background: #fff;
+    color: #000;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+
+    &::placeholder {
+      color: #000;
+      opacity: 1;
+    }
+  }
+
+  button {
+    flex-shrink: 0;
+    padding: 0 23px;
+    border: 1px solid #000;
+    border-radius: 0;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background: transparent;
+      color: #000;
+    }
+  }
+}
+
+.ajmah-footer-message {
+  margin: 10px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: #000;
+}
+
+/* SOCIALS */
+
+.ajmah-footer-social {
+  margin-top: 65px;
+
+  h3 {
+    margin: 0 0 28px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 27px;
+    font-weight: 400;
+  }
+}
+
+.ajmah-footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    &:hover {
+      opacity: 0.55;
+      transform: translateY(-2px);
+    }
+  }
+
+  svg {
+    width: 23px;
+    height: 23px;
+    display: block;
+  }
+}
+
+/* BOTTOM */
+
+.ajmah-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 25px;
+
+  span,
+  a {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #000;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.25s ease;
+
+    &:hover {
+      opacity: 0.55;
+    }
+  }
+}
+
+/* ACCESSIBILITY */
+
+.ajmah-footer-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .ajmah-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+
+  .ajmah-footer-right {
+    justify-self: start;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .ajmah-footer-new {
+    padding: 55px 24px 25px;
+  }
+
+  .ajmah-footer-heading {
+    padding-bottom: 35px;
+  }
+
+  .ajmah-footer-logo {
+    font-size: 28px;
+    letter-spacing: 4px;
+  }
+
+  .ajmah-footer-grid {
+    padding: 45px 0 65px;
+    gap: 55px;
+  }
+
+  .ajmah-footer-navigation {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 20px;
+  }
+
+  .ajmah-footer-column {
+    h3 {
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
+
+    a {
+      font-size: 10px;
+      margin-bottom: 13px;
+    }
+  }
+
+  .ajmah-footer-right {
+    max-width: 100%;
+  }
+
+  .ajmah-footer-newsletter {
+    h3 {
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 0 15px;
+    }
+  }
+
+  .ajmah-footer-social {
+    margin-top: 50px;
+
+    h3 {
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .ajmah-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    line-height: 1.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ajmah-footer-new a,
+  .ajmah-footer-new button {
+    transition: none;
+  }
+}
